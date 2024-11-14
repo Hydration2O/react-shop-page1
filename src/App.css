@@ -13,6 +13,14 @@
   }
 }
 
+.bgimg{
+  background-image: url("./assets/shopFront.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  max-width: 98vw;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
