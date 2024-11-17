@@ -2,8 +2,16 @@ import "./App.css";
 import myimg from "./assets/StorefrontV2.jpg";
 import productData from "./products";
 
-
 function App() {
+  const productList = productData.map((prod) => {
+    return (
+      <div className="prodItem">
+        <img className="prodImg" src={prod.img} />
+        <h1>{prod.name}</h1>
+        <p>{prod.price}</p>
+      </div>
+    );
+  });
   return (
     <div className="App">
       <header>
@@ -13,21 +21,12 @@ function App() {
       <div>
         <img className="bgImg" src={myimg} />
       </div>
-       <div>
-      <div className="prodShelf">
-        <div className="prodItem">
-          <img className="prodImg" src={productData[0].img} />
-          <h3>{productData[0].name}</h3>
-          <p>{productData[0].price}</p>
-        </div>
-        <div className="prodItem">
-          <img className="prodImg" src={productData[1].img} />
-          <h3>{productData[1].name}</h3>
-          <p>{productData[1].price}</p>
+      <div>
+        <div className="prodShelf">
+          {productList}
         </div>
       </div>
     </div>
-     </div>
   );
 }
 
